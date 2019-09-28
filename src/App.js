@@ -1,22 +1,36 @@
 import React, {Component, Fragment} from 'react';
-import "./App.css"
+import styled from "styled-components";
 
 class App extends Component{
   render(){
     return (
-      <Fragment>
-        <button className="button button--success">hello</button>
-        <button className="button button--danger">hello</button>
-        <Button danger/>
-        <Button success/>
-      </Fragment>
+      <Container>
+        <Button danger>Hello</Button>
+        <Button>Hello</Button>
+      </Container>
     )
     
   }
 }
 
-const Button = ({danger})=>(
-  <button className={danger?"button button--danger":"button button--success"}>hello</button>
-)
+const Container = styled.div`
+  width:100%;
+  height:100vh;
+  background-color:#bdc3c7;
+  `
+const Button = styled.button`
+  border-radius:50px;
+  padding: 5px;
+  min-width: 120px;
+  color:white;
+  font-weight: 600;
+  -webkit-appearance: none;
+  cursor:pointer;
+  &:active,
+  &focus{
+    outline: none;
+  }
+  background-color:${props=>props.danger ? '#e74c3c' : '#2ecc71'}
+  `
 
 export default App;
