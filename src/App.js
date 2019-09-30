@@ -10,15 +10,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Card = styled.div`
+    background-color: red;
+`;
+
 const Container = styled.div`
   width:100%;
   height:100vh;
   background-color:#bdc3c7;
+  ${Card}{
+    background-color: blue;
+  }
   `;
 
-  const Card = styled.div`
-    background-color: red;
-  `
+
 
 const Button = styled.button`
   border-radius: 30px;
